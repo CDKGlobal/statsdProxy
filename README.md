@@ -7,6 +7,6 @@ There are two variables to configure:
 **targetAddress**: Recipient statsd address
 **targetPort**: Recipient statsd port
 
-You can run via the Docker [container](https://registry.hub.docker.com/u/makanab/statsdproxy/):
+You can run via the Docker [container](https://registry.hub.docker.com/u/cdkglobal/statsdproxy/):
 
-docker run -e targetAddress=<statsd address> -e targetPort=<statsd port> -p 8080:8080 makanab/statsdproxy
+docker run -e targetAddress=<statsd address> -e targetPort=<statsd port> -p 8080:8080 cdkglobal/statsdproxy
