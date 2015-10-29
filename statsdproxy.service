@@ -1,0 +1,11 @@
+[Unit]
+Description=statsd proxy
+
+[Service]
+EnvironmentFile=/etc/environment
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill statsdproxy
+ExecStartPre=-/usr/bin/docker rm statsdproxy
+ExecStartPre=/usr/bin/docker pull cdkglobal/statsdproxy
+ExecStart=/usr/bin/docker run --rm --name statsdproxy -e targetAddress=<your graphite server> -p 8000:8080 cdkglobal/statsdproxy
+ExecStop=/usr/bin/docker stop statsdproxy
